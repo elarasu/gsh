@@ -1,10 +1,12 @@
 package main
 
 import (
+	"bytes"
 	"fmt"
 	"os"
 
 	log "github.com/Sirupsen/logrus"
+	"github.com/spf13/viper"
 	"gopkg.in/alecthomas/kingpin.v2"
 )
 
@@ -47,4 +49,29 @@ func main() {
 	kingpin.Version("0.0.1")
 	kingpin.Parse()
 	fmt.Printf("Would ping: %s with timeout %s and count %d", *ip, *timeout, *count)
+
+	// configuration parsing
+	viper.SetConfigType("yaml") // or viper.SetConfigType("YAML")
+
+	// any approach to require this configuration into your program.
+	var yamlExample = []byte(`
+Hacker: true
+name: steve
+hobbies:
+- skateboarding
+- snowboarding
+- go
+clothing:
+  jacket: leather
+  trousers: denim
+age: 35
+eyes : brown
+beard: true
+`)
+
+	viper.ReadConfig(bytes.NewBuffer(yamlExample))
+	fmt.Println(viper.AllKeys())
+	fmt.Println(viper.Get("name")) // this would be "steve"
+	fmt.Println(viper.Get("hobbies"))
+
 }

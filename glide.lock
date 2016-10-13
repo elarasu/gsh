@@ -1,6 +1,18 @@
-hash: 52808fc388207411649e5bd8d90d02d9756974a74f9b056415618f3c907160f5
-updated: 2016-10-13T09:53:32.491128262-07:00
+hash: a39a794f3a5c1da51eefc68d42daa2c245708e084fe5cc7909a107054e06376b
+updated: 2016-10-13T10:25:48.33049461-07:00
 imports:
+- name: github.com/alecthomas/template
+  version: a0175ee3bccc567396460bf5acd36800cb10c49c
+  subpackages:
+  - parse
+- name: github.com/alecthomas/units
+  version: 2efee857e7cfd4f3d0138cc3cbb1b4966962b93a
 - name: github.com/Sirupsen/logrus
   version: 4b6ea7319e214d98c938f12692336f7ca9348d6b
+- name: golang.org/x/sys
+  version: 9bb9f0998d48b31547d975974935ae9b48c7a03c
+  subpackages:
+  - unix
+- name: gopkg.in/alecthomas/kingpin.v2
+  version: e9044be3ab2a8e11d4e1f418d12f0790d57e8d70
 testImports: []

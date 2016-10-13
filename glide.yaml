@@ -2,3 +2,6 @@ package: gsh
 import:
 - package: github.com/Sirupsen/logrus
   version: ^0.10.0
+- package: gopkg.in/alecthomas/kingpin.v2
+  version: ^2.2.3
+- package: github.com/alecthomas/template

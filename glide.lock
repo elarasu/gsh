@@ -1,5 +1,5 @@
-hash: ba931960fb78126a62bb9dbf6a7b91b82a4ecaef9fb836fc8e116b2939f10a74
-updated: 2016-10-13T10:46:06.194172378-07:00
+hash: d9b39240430e86a0fc9d21feba53b059430ff40d9800e572209aa091bd6403c5
+updated: 2016-11-07T19:49:21.081070826-08:00
 imports:
 - name: github.com/alecthomas/template
   version: a0175ee3bccc567396460bf5acd36800cb10c49c
@@ -7,10 +7,12 @@ imports:
   - parse
 - name: github.com/alecthomas/units
   version: 2efee857e7cfd4f3d0138cc3cbb1b4966962b93a
+- name: github.com/chzyer/readline
+  version: 62c6fe6193755f722b8b8788aa7357be55a50ff1
 - name: github.com/fsnotify/fsnotify
-  version: bd2828f9f176e52d7222e565abb2d338d3f3c103
+  version: fd9ec7deca8bf46ecd2a795baaacf2b3a9be1197
 - name: github.com/hashicorp/hcl
-  version: 6f5bfed9a0a22222fbe4e731ae3481730ba41e93
+  version: f74cf8281543a0797d7b4ab7d88e76e7ba125308
   subpackages:
   - hcl/ast
   - hcl/parser
@@ -25,17 +27,17 @@ imports:
 - name: github.com/magiconair/properties
   version: 0723e352fa358f9322c938cc2dadda874e9151a9
 - name: github.com/mitchellh/mapstructure
-  version: a6ef2f080c66d0a2e94e97cf74f80f772855da63
+  version: f3009df150dadf309fdee4a54ed65c124afad715
 - name: github.com/pelletier/go-buffruneio
   version: df1e16fde7fc330a0ca68167c23bf7ed6ac31d6d
 - name: github.com/pelletier/go-toml
   version: 45932ad32dfdd20826f5671da37a5f3ce9f26a8d
 - name: github.com/pkg/errors
-  version: 839d9e913e063e28dfd0e6c7b7512793e0a48be9
+  version: 248dadf4e9068a0b3e79f02ed0a610d935de5302
 - name: github.com/pkg/sftp
   version: 4d0e916071f68db74f8a73926335f809396d6b42
 - name: github.com/Sirupsen/logrus
-  version: 4b6ea7319e214d98c938f12692336f7ca9348d6b
+  version: d26492970760ca5d33129d2d799e34be5c4782eb
 - name: github.com/spf13/afero
   version: 52e4a6cfac46163658bd4f123c49b6ee7dc75f78
   subpackages:
@@ -46,11 +48,11 @@ imports:
 - name: github.com/spf13/jwalterweatherman
   version: 33c24e77fb80341fe7130ee7c594256ff08ccc46
 - name: github.com/spf13/pflag
-  version: bf8481a6aebc13a8aab52e699ffe2e79771f5a3f
+  version: 5ccb023bc27df288a957c5e994cd44fd19619465
 - name: github.com/spf13/viper
   version: 44208030b391907a5ec5c5658470bdb6e6169073
 - name: golang.org/x/crypto
-  version: 5f31782cfb2b6373211f8f9fbf31283fa234b570
+  version: 9477e0b78b9ac3d0b03822fd95422e2fe07627cd
   subpackages:
   - curve25519
   - ed25519
@@ -61,7 +63,7 @@ imports:
   subpackages:
   - unix
 - name: golang.org/x/text
-  version: c745997bb18563e8788428768ce0f034f2b663df
+  version: a8b38433e35b65ba247bb267317037dee1b70cea
   subpackages:
   - transform
   - unicode/norm

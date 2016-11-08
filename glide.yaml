@@ -6,3 +6,5 @@ import:
   version: ^2.2.3
 - package: github.com/alecthomas/template
 - package: github.com/spf13/viper
+- package: github.com/chzyer/readline
+  version: v1.4

@@ -22,6 +22,4 @@ _testmain.go
 *.exe
 *.test
 *.prof
-vendor/golang.org/
-vendor/github.com/pkg/
-vendor/gopkg.in/
+vendor/*

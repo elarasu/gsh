@@ -3,6 +3,7 @@ package main
 import (
 	"bytes"
 	"fmt"
+	"gsh/banner"
 	"io"
 	"os"
 	"strconv"
@@ -91,7 +92,7 @@ beard: true
 	fmt.Println(viper.AllKeys())
 	fmt.Println(viper.Get("name")) // this would be "steve"
 	fmt.Println(viper.Get("hobbies"))
-
+	banner.Print("gsh")
 	l, err := readline.NewEx(&readline.Config{
 		Prompt:          "\033[31m»\033[0m ",
 		HistoryFile:     "/tmp/readline.tmp",

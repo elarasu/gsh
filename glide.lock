@@ -1,5 +1,5 @@
-hash: d9b39240430e86a0fc9d21feba53b059430ff40d9800e572209aa091bd6403c5
-updated: 2016-11-07T20:41:46.16356141-08:00
+hash: c08e5f76c13852b6a27244330f7c61981f090d99d4e1bfbc4a8f4381a43b7677
+updated: 2016-11-07T20:59:28.661109396-08:00
 imports:
 - name: github.com/alecthomas/template
   version: a0175ee3bccc567396460bf5acd36800cb10c49c
@@ -11,6 +11,8 @@ imports:
   version: 62c6fe6193755f722b8b8788aa7357be55a50ff1
 - name: github.com/fsnotify/fsnotify
   version: fd9ec7deca8bf46ecd2a795baaacf2b3a9be1197
+- name: github.com/go-resty/resty
+  version: 24dc7ba4bc1ef9215048b28e7248f99c42901db5
 - name: github.com/hashicorp/hcl
   version: f74cf8281543a0797d7b4ab7d88e76e7ba125308
   subpackages:

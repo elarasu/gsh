@@ -11,6 +11,7 @@ import (
 
 	log "github.com/Sirupsen/logrus"
 	"github.com/chzyer/readline"
+	"github.com/go-resty/resty"
 	"github.com/spf13/viper"
 	"gopkg.in/alecthomas/kingpin.v2"
 )
@@ -18,9 +19,8 @@ import (
 // setup commandline params
 var (
 	debug   = kingpin.Flag("debug", "Enable debug mode.").Bool()
-	timeout = kingpin.Flag("timeout", "Timeout waiting for ping.").Default("5s").OverrideDefaultFromEnvar("PING_TIMEOUT").Short('t').Duration()
-	ip      = kingpin.Arg("ip", "IP address to ping.").Required().IP()
-	count   = kingpin.Arg("count", "Number of packets to send").Int()
+	timeout = kingpin.Flag("timeout", "Timeout for http call.").Default("5s").OverrideDefaultFromEnvar("HTTP_TIMEOUT").Short('t').Duration()
+	url     = kingpin.Arg("url", "URL address.").Required().URL()
 )
 
 func usage(w io.Writer) {
@@ -34,6 +34,7 @@ var completer = readline.NewPrefixCompleter(
 		readline.PcItem("emacs"),
 	),
 	readline.PcItem("bye"),
+	readline.PcItem("get"),
 	readline.PcItem("help"),
 )
 
@@ -67,7 +68,7 @@ func main() {
 	// command line params
 	kingpin.Version("0.0.1")
 	kingpin.Parse()
-	fmt.Printf("Would ping: %s with timeout %s and count %d", *ip, *timeout, *count)
+	//	fmt.Printf("Would ping: %s with timeout %s and count %d", *ip, *timeout, *count)
 
 	// configuration parsing
 	viper.SetConfigType("yaml") // or viper.SetConfigType("YAML")
@@ -135,6 +136,18 @@ beard: true
 			} else {
 				println("current mode: emacs")
 			}
+		case strings.HasPrefix(line, "get"):
+			line := strings.TrimSpace(line[3:])
+			geturl := (*url).String() + "/" + line
+			println("get ", geturl)
+			resp, _ := resty.R().Get(geturl)
+			// explore response object
+			// fmt.Printf("\nError: %v", err)
+			// fmt.Printf("\nResponse Status Code: %v", resp.StatusCode())
+			// fmt.Printf("\nResponse Status: %v", resp.Status())
+			// fmt.Printf("\nResponse Time: %v", resp.Time())
+			// fmt.Printf("\nResponse Recevied At: %v", resp.ReceivedAt())
+			fmt.Println(string(resp.Body())) // or resp.String() or string(resp.Body())
 
 		case line == "help":
 			usage(l.Stderr())

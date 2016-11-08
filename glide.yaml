@@ -8,3 +8,5 @@ import:
 - package: github.com/spf13/viper
 - package: github.com/chzyer/readline
   version: v1.4
+- package: github.com/go-resty/resty
+  version: ^0.9.0
